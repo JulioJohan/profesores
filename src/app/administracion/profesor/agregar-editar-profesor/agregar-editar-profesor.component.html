@@ -1,6 +1,6 @@
 <div class="container">
     <div class="mx-auto" style="text-align: center;">
-        <h3 *ngIf="formProfesor.value.profesor; else elseTD">Editar profesor</h3>
+        <h3 *ngIf="profesor.pk_profesor>0; else elseTD">Editar profesor</h3>
         <ng-template #elseTD>
             <h3>Agregar profesor</h3>
         </ng-template>
@@ -11,13 +11,13 @@
                 <div class="col">
                     <mat-form-field style="width:235px;" appearance="outline">
                         <mat-label>Nombre</mat-label>
-                        <input matInput placeholder="Nombre" formControlName="txt_nombre">
+                        <input matInput placeholder="Nombre" formControlName="txt_nombre" [readonly]="isClicked">
                     </mat-form-field>
                 </div>
                 <div class="col">
                     <mat-form-field style="width:235px;" appearance="outline">
                         <mat-label>Apellido paterno</mat-label>
-                        <input matInput placeholder="Apellido paterno" formControlName="txt_ape_paterno">
+                        <input matInput placeholder="Apellido paterno" formControlName="txt_ape_paterno" [readonly]="isClicked">
                     </mat-form-field>
                 </div>
             </div>
@@ -25,14 +25,14 @@
                 <div class="col">
                     <mat-form-field style="width:235px;" appearance="outline">
                         <mat-label>Apellido paterno</mat-label>
-                        <input matInput placeholder="Apellido paterno" formControlName="txt_ape_materno">
+                        <input matInput placeholder="Apellido paterno" formControlName="txt_ape_materno" [readonly]="isClicked">
                     </mat-form-field>
                 </div>
 
                 <div class="col">
                     <mat-form-field style="width:235px;" appearance="outline">
                         <mat-label>Correo</mat-label>
-                        <input matInput placeholder="Correo" formControlName="txt_correo">
+                        <input matInput placeholder="Correo" formControlName="txt_correo" [readonly]="isClicked">
                     </mat-form-field>
                 </div>
             </div>
@@ -41,23 +41,26 @@
                 <div class="col">
                     <mat-form-field style="width:235px;" appearance="outline">
                         <mat-label>Clave</mat-label>
-                        <input matInput placeholder="Clave" formControlName="txt_clave">
+                        <input matInput placeholder="Clave" formControlName="txt_clave" [readonly]="isClicked">
                     </mat-form-field>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    <button mat-raised-button color="primary" (click)="aceptar()">
+                    <button mat-raised-button color="primary" (click)="aceptar()" [disabled]="isClicked">
                         Aceptar
                     </button>
                 </div>
                 <div class="col">
-                    <button mat-raised-button color="warn" (click)="cerrar()">
+                    <button mat-raised-button color="warn" (click)="cerrar()" [disabled]="isClicked">
                         Cancelar
                     </button>
                 </div>
             </div>
         </form>
     </div>
+    <div class="row barra">
+        <mat-progress-bar mode="indeterminate" *ngIf="isClicked"></mat-progress-bar>
+      </div>
 </div>

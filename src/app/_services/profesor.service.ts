@@ -21,7 +21,7 @@ export class ProfesorService {
   }
 
   editar(profesor: ProfesorRequest): Observable<Response<Profesor>>{
-    return this.http.post<Response<Profesor>>(url+"/guardarProfesor", profesor);
+    return this.http.put<Response<Profesor>>(url+"/actualizarProfesor", profesor);
   }
 
   

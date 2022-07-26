@@ -15,6 +15,7 @@ export class AgregarEditarProfesorComponent implements OnInit {
 
   profesor!: ProfesorRequest;
   formProfesor: FormGroup;
+  isClicked: boolean;
 
   constructor(
     private profesorService:ProfesorService,
@@ -25,6 +26,7 @@ export class AgregarEditarProfesorComponent implements OnInit {
 
   ngOnInit(): void {
     this.profesor= new ProfesorRequest();
+    this.profesor=this.data
     this.cargarFormulario();
   }
 
@@ -64,6 +66,7 @@ export class AgregarEditarProfesorComponent implements OnInit {
           this.dialogRef.close({estatus:true,data:data.data});
       })
     }
+    this.isClicked = true;
   }
 
   cerrar(){
