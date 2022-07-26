@@ -1,3 +1,4 @@
+import { ProfesorComponent } from './profesor/profesor.component';
 import { Page404Component } from "./../authentication/page404/page404.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
@@ -21,7 +22,10 @@ const routes: Routes = [
       path: "filtrobusqueda",
       component: AlumnosComponent,
     },
-    
+    {
+      path:"profesores/todos-profesores",
+      component: ProfesorComponent
+    },
  
   
 

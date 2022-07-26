@@ -134,7 +134,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "/administracion/profesores",
         title: "Profesores",
-        moduleName: "profesores",
+        moduleName: "administracion",
         iconType: "",
         icon: "",
         class: "ml-menu",
@@ -143,7 +143,19 @@ export const ROUTES: RouteInfo[] = [
         badgeClass: "",
         role: [""],
         submenu: [
-          
+          {
+            path: "/administracion/profesores/todos-profesores",
+            title: "Todos los profesores",
+            moduleName: "Administracion",
+            iconType: "",
+            icon: "",
+            class: "ml-menu",
+            groupTitle: false,
+            badge: "",
+            badgeClass: "",
+            role: [""],
+            submenu: []
+          },
         ]
       }
       

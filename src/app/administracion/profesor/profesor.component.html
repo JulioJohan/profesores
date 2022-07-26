@@ -1,0 +1,98 @@
+<section class="content">
+    <div class="content-block">
+      <div class="block-header">
+        <!-- breadcrumb -->
+        <app-breadcrumb [title]="'Profesor'" [items]="['Profesor']" >
+        </app-breadcrumb>
+        <div class="card">
+          <div class="body">
+            <div class="form-row"> 
+              <form>
+                <div class="row admiAlumno">
+                  <div class="col">
+                    <h4>Filtro de búsqueda</h4>
+                  </div>
+                </div>
+                <div class="row" >
+                  <div class="col-auto">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Expediente</mat-label>
+                      <input matInput maxlength="6" id="txt_expediente"  >
+                    </mat-form-field>
+                  </div>
+  
+                  <div class="col-auto">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Nombre</mat-label>
+                      <input matInput id="txt_nombre" maxlength ="30" type="text" onkeydown="return /[a-z, ]/i.test(event.key)">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-auto">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Apellido paterno</mat-label>
+                      <input matInput id="txt_ape_paterno" maxlength ="30"  type="text" onkeydown="return /[a-z, ]/i.test(event.key)">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-4">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>CURP</mat-label>
+                      <input matInput maxlength="18" id="txt_curp"   >
+                    </mat-form-field>
+                  </div>
+                  
+                  
+                  <div class="row">
+                    <div class="col-4">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Correo</mat-label>
+                        <input matInput id="txt_correo" maxlength ="30" >
+                      </mat-form-field>
+                    </div>
+                    <div class="col-3">
+                      <!-- <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Grupo</mat-label>
+                        <mat-select formControlName="txt_desc_grupo" class="custom-select mr-sm-2" id="txt_desc_grupo">
+                          <mat-option></mat-option>
+                          <mat-option *ngFor="let grupos of grupo" [value]="grupos">{{grupos}}</mat-option>
+                           </mat-select>
+                      </mat-form-field> -->
+                    </div>
+                    
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-primary" type="submit">
+                        <mat-icon class="col-white">search</mat-icon>
+                      </button>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-primary" (click)="openModal()">
+                      <mat-icon class="col-white">add</mat-icon>
+                    </button>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-outline-primary" >
+                      Consultar todos
+                    </button>
+                  </div>
+                  <div class="col-auto">
+                    <button type="button" class="btn btn-outline-primary" >
+                      Limpiar
+                    </button>
+                  </div>
+                  
+                  </div>
+            
+                  <div class="row">
+                    
+                  </div>
+  
+                </div>
+              </form> 
+          </div>
+          </div>
+      </div>
+  
+      </div>
+      
+    </div>
+  
+  </section>

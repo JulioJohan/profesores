@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="mx-auto" style="text-align: center;">
+        <h3 *ngIf="formProfesor.value.profesor; else elseTD">Editar profesor</h3>
+        <ng-template #elseTD>
+            <h3>Agregar profesor</h3>
+        </ng-template>
+    </div>
+    <div class="col">
+        <form [formGroup]="formProfesor">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field style="width:235px;" appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput placeholder="Nombre" formControlName="txt_nombre">
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field style="width:235px;" appearance="outline">
+                        <mat-label>Apellido paterno</mat-label>
+                        <input matInput placeholder="Apellido paterno" formControlName="txt_ape_paterno">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field style="width:235px;" appearance="outline">
+                        <mat-label>Apellido paterno</mat-label>
+                        <input matInput placeholder="Apellido paterno" formControlName="txt_ape_materno">
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <mat-form-field style="width:235px;" appearance="outline">
+                        <mat-label>Correo</mat-label>
+                        <input matInput placeholder="Correo" formControlName="txt_correo">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field style="width:235px;" appearance="outline">
+                        <mat-label>Clave</mat-label>
+                        <input matInput placeholder="Clave" formControlName="txt_clave">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button mat-raised-button color="primary" (click)="aceptar()">
+                        Aceptar
+                    </button>
+                </div>
+                <div class="col">
+                    <button mat-raised-button color="warn" (click)="cerrar()">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
