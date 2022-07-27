@@ -1,98 +1,182 @@
 <section class="content">
-    <div class="content-block">
-      <div class="block-header">
-        <!-- breadcrumb -->
-        <app-breadcrumb [title]="'Profesor'" [items]="['Profesor']" >
-        </app-breadcrumb>
-        <div class="card">
-          <div class="body">
-            <div class="form-row"> 
-              <form>
-                <div class="row admiAlumno">
-                  <div class="col">
-                    <h4>Filtro de búsqueda</h4>
-                  </div>
+  <div class="content-block">
+    <div class="block-header">
+      <!-- breadcrumb -->
+      <app-breadcrumb [title]="'Profesor'" [items]="['Profesor']">
+      </app-breadcrumb>
+      <div class="card">
+        <div class="body">
+          <div class="form-row">
+            <form>
+              <div class="row admiAlumno">
+                <div class="col">
+                  <h4>Filtro de búsqueda</h4>
                 </div>
-                <div class="row" >
-                  <div class="col-auto">
-                    <mat-form-field appearance="fill">
-                      <mat-label>Expediente</mat-label>
-                      <input matInput maxlength="6" id="txt_expediente"  >
-                    </mat-form-field>
-                  </div>
-  
-                  <div class="col-auto">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                      <mat-label>Nombre</mat-label>
-                      <input matInput id="txt_nombre" maxlength ="30" type="text" onkeydown="return /[a-z, ]/i.test(event.key)">
-                    </mat-form-field>
-                  </div>
-                  <div class="col-auto">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                      <mat-label>Apellido paterno</mat-label>
-                      <input matInput id="txt_ape_paterno" maxlength ="30"  type="text" onkeydown="return /[a-z, ]/i.test(event.key)">
-                    </mat-form-field>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col-auto">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Expediente</mat-label>
+                    <input matInput maxlength="6" id="txt_expediente" />
+                  </mat-form-field>
+                </div>
+
+                <div class="col-auto">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input
+                      matInput
+                      id="txt_nombre"
+                      maxlength="30"
+                      type="text"
+                      onkeydown="return /[a-z, ]/i.test(event.key)"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-auto">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Apellido paterno</mat-label>
+                    <input
+                      matInput
+                      id="txt_ape_paterno"
+                      maxlength="30"
+                      type="text"
+                      onkeydown="return /[a-z, ]/i.test(event.key)"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>CURP</mat-label>
+                    <input matInput maxlength="18" id="txt_curp" />
+                  </mat-form-field>
+                </div>
+
+                <div class="row">
                   <div class="col-4">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                      <mat-label>CURP</mat-label>
-                      <input matInput maxlength="18" id="txt_curp"   >
+                    <mat-form-field
+                      class="example-full-width"
+                      appearance="fill"
+                    >
+                      <mat-label>Correo</mat-label>
+                      <input matInput id="txt_correo" maxlength="30" />
                     </mat-form-field>
                   </div>
-                  
-                  
-                  <div class="row">
-                    <div class="col-4">
-                      <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Correo</mat-label>
-                        <input matInput id="txt_correo" maxlength ="30" >
-                      </mat-form-field>
-                    </div>
-                    <div class="col-3">
-                      <!-- <mat-form-field class="example-full-width" appearance="fill">
+                  <div class="col-3">
+                    <!-- <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>Grupo</mat-label>
                         <mat-select formControlName="txt_desc_grupo" class="custom-select mr-sm-2" id="txt_desc_grupo">
                           <mat-option></mat-option>
                           <mat-option *ngFor="let grupos of grupo" [value]="grupos">{{grupos}}</mat-option>
                            </mat-select>
                       </mat-form-field> -->
-                    </div>
-                    
+                  </div>
+
                   <div class="col-auto">
                     <button type="button" class="btn btn-primary" type="submit">
-                        <mat-icon class="col-white">search</mat-icon>
-                      </button>
+                      <mat-icon class="col-white">search</mat-icon>
+                    </button>
                   </div>
                   <div class="col-auto">
-                    <button type="button" class="btn btn-primary" (click)="openModal()">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="openModal()"
+                    >
                       <mat-icon class="col-white">add</mat-icon>
                     </button>
                   </div>
                   <div class="col-auto">
-                    <button type="button" class="btn btn-outline-primary" >
+                    <button type="button" class="btn btn-outline-primary">
                       Consultar todos
                     </button>
                   </div>
                   <div class="col-auto">
-                    <button type="button" class="btn btn-outline-primary" >
+                    <button type="button" class="btn btn-outline-primary">
                       Limpiar
                     </button>
                   </div>
-                  
-                  </div>
-            
-                  <div class="row">
-                    
-                  </div>
-  
                 </div>
-              </form> 
+              </div>
+            </form>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="card">
+            <div class="body">
+              <div class="table">
+                
+                <!--<div class="materialTableHeader">
+                  <div class="row">
+                    <div class="col-8">
+                      <ul class="header-buttons-left ms-0">
+                        <li class="dropdown" >
+                          <h4>Alumnos</h4> 
+                      </ul>
+                    </div>
+                  </div>
+                </div>-->
+                
+                <mat-table #table matTableExporter [dataSource]="dataSource" matSort class="mat-cell"
+                   >
+                  
+                  <!-- ID Column -->
+                  <ng-container  matColumnDef="txt_clave">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="col-2">Clave</mat-header-cell>
+                    <mat-cell *matCellDef="let row" class="col-2">{{row.txt_clave}} </mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="txt_nombre">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="col-3">Nombre</mat-header-cell>
+                    <mat-cell *matCellDef="let row" class="col-3"> {{row.txt_nombre}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="txt_ape_paterno">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="col-2">Apellido Paterno</mat-header-cell>
+                    <mat-cell *matCellDef="let row" class="col-2"> {{row.txt_ape_paterno}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="txt_ape_materno">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="col-2">Apellido Materno</mat-header-cell>
+                    <mat-cell *matCellDef="let row" class="col-2"> {{row.txt_ape_materno}}</mat-cell>
+                  </ng-container>
+                  <ng-container matColumnDef="txt_correo">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header class="col-1">Correo</mat-header-cell>
+                    <mat-cell *matCellDef="let row" class="col-1">
+                    </mat-cell>
+                  </ng-container>                
+                  <!-- actions -->
+                  <ng-container matColumnDef="actions" >
+                    <mat-header-cell *matHeaderCellDef class="col-2">Acciones</mat-header-cell>
+                    <mat-cell *matCellDef="let row" class="col-2">
+                      <button type="button" class="btn btn-outline-success" (click)="editarAlumno(row, row.pk_alumno)">
+                        <mat-icon>create</mat-icon> 
+                      </button>
+                      <button type="button"class="btn btn-outline-danger" (click)="eliminarAlumno(i, row)">
+                        <mat-icon>delete_outline</mat-icon> 
+                      </button>
+                      <button type="button"class="btn btn-outline-primary" [routerLink]="['./alumnoPerfil', row.pk_alumno]">
+                        <mat-icon>person</mat-icon> 
+                      </button>
+                      <!--<button mat-icon-button color="accent" [routerLink]="['./alumnoPerfil', row.pk_alumno]" 
+                          class="tbl-action-btn">
+                          <app-feather-icons [icon]="'users'" [class]="'tbl-fav-edit'"></app-feather-icons>
+                        </button>-->
+                    </mat-cell>
+                    
+                  </ng-container>
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row;  columns: displayedColumns;"  
+                    [style.cursor]="'pointer'" matRipple>
+                  </mat-row> 
+                </mat-table>
+                <mat-paginator #paginator [pageIndex]="0" [pageSize]="5"
+                  [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+              </div> 
+            </div>
           </div>
+        </div>
       </div>
-  
-      </div>
-      
     </div>
-  
-  </section>
+  </div>
+</section>
