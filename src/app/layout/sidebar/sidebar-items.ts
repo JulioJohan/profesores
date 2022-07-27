@@ -134,7 +134,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "/administracion/profesores",
         title: "Profesores",
-        moduleName: "administracion",
+        moduleName: "administracion profesor",
         iconType: "",
         icon: "",
         class: "ml-menu",
@@ -146,7 +146,7 @@ export const ROUTES: RouteInfo[] = [
           {
             path: "/administracion/profesores/todos-profesores",
             title: "Todos los profesores",
-            moduleName: "Administracion",
+            moduleName: "Todos los profesores",
             iconType: "",
             icon: "",
             class: "ml-menu",
